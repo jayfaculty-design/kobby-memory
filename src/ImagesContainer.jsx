@@ -57,7 +57,9 @@ function ImagesContainer() {
         `${URL}?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=15&offset=${randomOffset}`
       );
       if (!response.ok) {
-        throw new Error("Failed to fetch Marvel Data");
+        throw new Error(
+          "Failed to fetch Marvel Data, Please check your connection and Refresg the page"
+        );
       }
 
       const data = await response.json();
@@ -92,7 +94,7 @@ function ImagesContainer() {
   if (error)
     return (
       <div className="flex justify-center items-center h-screen">
-        <p className="text-[50px] text-white z-[999]">{error}</p>
+        <p className="text-[40px] text-white z-[999]">{error}</p>
       </div>
     );
   return (
